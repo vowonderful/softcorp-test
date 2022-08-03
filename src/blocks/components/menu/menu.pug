@@ -1,0 +1,15 @@
+//- +menu(menu)(class="header__menu")
+//- - 
+//-     var menu = [
+//-     { name: "Бизнес", href: "/business/" },
+//-     { name: "О нас", href: "/about/" },
+//-     { name: "Цены", href: "/prices/" },
+//-     { name: "Оформить заказ", href: "/order/" }
+//-     ];
+
+mixin menu(menu)
+  nav.menu
+    ul._list
+      each item, index in menu
+        li._item(class= (index == 0 ? 'menu__item_active' : ''))
+          a(href=item.href)._link= item.name

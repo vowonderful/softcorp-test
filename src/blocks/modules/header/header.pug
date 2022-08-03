@@ -1,0 +1,17 @@
+include ../../components/logo/logo
+include ../../components/menu/menu
+
+- var logoTitle = 'LOREMIPSUM.<span class="logo__title_accent">NET</span>';
+- 
+  var menu = [
+  { name: "Бизнес", href: "/business/" },
+  { name: "О нас", href: "/about/" },
+  { name: "Цены", href: "/prices/" },
+  { name: "Оформить заказ", href: "/order/" }
+  ];
+
+header#header.header
+  ._container
+    ._wrapper
+      +logo(logoTitle)(class="header__logo")
+      +menu(menu)(class="header__menu")

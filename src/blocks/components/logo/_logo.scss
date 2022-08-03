@@ -1,0 +1,12 @@
+.logo {
+  &__title {
+    color: $white;
+    font-weight: 800;
+    font-size: 1.75rem;
+    line-height: 2rem;
+
+    &_accent {
+      color: $accent-light;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+//- +logo(logoTitle)(class="header__logo")
+mixin logo(title)
+  div.logo(class!=attributes.class)
+    a(href="/")
+      div._title !{title}

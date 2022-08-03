@@ -1,0 +1,50 @@
+/* Base */
+$white: #fff;
+$black: #000;
+$accent: #3E9CDC;
+$accent-dark: #286690;
+$accent-light: #42a9ed;
+$background: #10101de6;
+
+$color-bg: $background;
+$color-text: $white;
+$color-base: $white;
+$color-graybase: $black;
+
+$font-family: 'Montserrat';
+$font-size: 14px;
+$line-height: 16px;
+$letter-spacing: 0;
+
+$color-primary: $accent;
+$color-secondary: #272733;
+
+/* Screen sizes */
+$screen-s1: 320px;
+$screen-s2: 576px;
+$screen-s3: 768px;
+$screen-s4: 992px;
+$screen-s5: 1024px;
+$screen-s6: 1200px;
+$screen-s7: 1400px;
+$screen-s8: 1600px;
+$screen-s9: 1920px;
+
+$screen-s1-min: $screen-s1;
+$screen-s1-max: ($screen-s1 - 1);
+$screen-s2-min: $screen-s2;
+$screen-s2-max: ($screen-s2 - 1);
+$screen-s3-min: $screen-s3;
+$screen-s3-max: ($screen-s3 - 1);
+$screen-s4-min: $screen-s4;
+$screen-s4-max: ($screen-s4 - 1);
+$screen-s5-min: $screen-s5;
+$screen-s5-max: ($screen-s5 - 1);
+$screen-s6-min: $screen-s6;
+$screen-s6-max: ($screen-s6 - 1);
+$screen-s7-min: $screen-s7;
+$screen-s7-max: ($screen-s7 - 1);
+$screen-s8-min: $screen-s8;
+$screen-s8-max: ($screen-s8 - 1);
+$screen-s9-min: $screen-s9;
+$screen-s9-max: ($screen-s9 - 1);

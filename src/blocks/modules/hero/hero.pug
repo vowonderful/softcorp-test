@@ -1,0 +1,8 @@
+include ../../components/title/h1
+section#hero.hero.layout-container
+    ._background.background
+        picture
+            source(srcset="img/modules/hero/background.webp", type="image/webp")
+            img(src="img/modules/hero/background.png", alt="hero")
+    ._title
+        +h1('<span class="accent">Lorem ipsum</span> dolor sit ametconsectetur <span class="accent">adipiscing</span>')(class="hero__title")
