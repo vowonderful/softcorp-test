@@ -1,0 +1,14 @@
+mixin payment(title='', hint='', icon)
+  .links__item.links__payment
+    .links__icon(class!=attributes.class title=hint)
+      svg
+        use(xlink:href="../img/sprites/sprite.svg#icon-" + icon)
+    .links__title= title
+
+mixin contact(title='', hint='', icon, link)
+  .links__item.links__contact
+    a(href=link target="_blank")
+      .links__icon(class!=attributes.class title=hint)
+        svg
+          use(xlink:href="../img/sprites/sprite.svg#icon-" + icon)
+      .links__title= title

@@ -1,9 +1,4 @@
 mixin button(href, text)
-  .button(class!=attributes.class)
-    .article-wrapper
-      a(href=href)= text
-      if block
-        block
-
-+button('', 'Заказать')(class='button__outline')
-+button('', 'Подробнее')
+  a.btn(href=href class!=attributes.class)= text
+    if block
+      block

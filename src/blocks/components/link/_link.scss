@@ -1,0 +1,140 @@
+.links {
+  $root: &;
+  display: flex;
+  gap: 40px;
+
+  &__icon {
+    transition: all 0.2s;
+    transform: translateY(2px);
+
+    svg {
+      width: 18px;
+      height: 18px;
+
+      use {
+        transition: fill 0.25s, filter 0.25s;
+        fill: $color-icon-default;
+      }
+    }
+
+    &_qiwi {
+      transform: translateY(2px);
+    }
+    &_ym {
+      transform: translateY(-1px);
+    }
+    &_wm {
+      transform: translateY(1px);
+    }
+    &_vk {
+      transform: translateY(0px);
+    }
+  }
+
+  &__title {
+    color: $gray;
+    transition: color 0.25s;
+  }
+
+  a {
+    position: relative;
+    transition: opacity .2s ease-out, transform .2s ease-out,
+      backgrounbd-color .2s ease-out;
+
+    #{$root}__title {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &::after {
+      content: "";
+      opacity: 0;
+      width: 100%;
+      height: 1px;
+      background-color: transparent;
+      position: absolute;
+      bottom: 0;
+      transform: translateY(-5px) scaleX(0.25);
+      transition: opacity .2s, transform .2s, backgrounbd-color .2s;
+    }
+
+    &:hover {
+      transition: opacity .2s, transform .2s, backgrounbd-color .2s;
+      &::after {
+        opacity: 1;
+        background-color: #3e9cdc99;
+        transform: translateY(1px) scaleX(1);
+      }
+
+      & *,
+      #{$root}__title {
+        color: $accent !important;
+      }
+    }
+  }
+
+  &__item,
+  &__item > a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: all .25s;
+
+    &:hover {
+      #{$root}__title {
+        color: $color-base;
+      }
+
+      #{$root}__icon {
+        &_qiwi {
+          svg use {
+            fill: $color-icon-qiwi;
+          }
+        }
+        &_ym {
+          svg use {
+            filter: hue-rotate(230deg);
+            fill: $color-icon-ym;
+          }
+        }
+        &_wm {
+          svg use {
+            fill: $color-icon-wm;
+          }
+        }
+        &_mail {
+          svg use {
+            fill: $accent-light;
+          }
+        }
+        &_vk {
+          svg use {
+            fill: $accent-light;
+          }
+        }
+      }
+    }
+  }
+
+  &__payment {
+    color: $gray;
+    cursor: default;
+  }
+  &__contact {
+    color: $color-base;
+  }
+
+  @include is-less-1024 {
+    column-gap: 20px;
+
+    &__item {
+      column-gap: 6px;
+    }
+  }
+  @include is-less-768 {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

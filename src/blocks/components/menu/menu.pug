@@ -8,8 +8,9 @@
 //-     ];
 
 mixin menu(menu)
-  nav.menu
+  nav.menu(class!=attributes.class)
     ul._list
       each item, index in menu
+        //- - var delay = 'transition-delay: ' + (((index + 1) * 75) + 300) + 'ms, 0ms';
         li._item(class= (index == 0 ? 'menu__item_active' : ''))
           a(href=item.href)._link= item.name

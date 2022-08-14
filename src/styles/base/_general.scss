@@ -9,34 +9,37 @@ ul {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  /*scroll-padding-top: 100px;*/
+}
+
 body {
   font-size: 14px;
   line-height: 16px;
   text-align: left;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba($accent, .5);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 
   height:100%;
   margin:0;
   padding:0;
 
-  background: $white;
+  background: $color-bg;
   color: $color-text;
 
   font-family: $font-family;
   font-size: $font-size;
   letter-spacing: $letter-spacing;
   line-height: $line-height;
-  text-align: left;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  // overflow:hidden !important;
+  
 }
 
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
 
   &:before, &:after {
     box-sizing:border-box;
@@ -56,39 +59,55 @@ a {
   text-decoration: none;
 }
 
-.layout-container {
-  max-width: 1920px;
-  margin: 0 auto;
-  overflow: hidden;
+h1 {
+  line-height: 1.2em;
 }
 
-.container {
-  max-width: 1072px;
-  margin: 0 auto;
-  padding: 0 50px;
+button, 
+input,
+textarea {
+  -webkit-appearance: none;
+    -moz-appearance: none;
+  -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.main > * {
+  position: relative;
+}
+
+.center {
+  width: 100%;
+  text-align: center;
 }
 
 .accent {
   color: $accent;
+  /* text-shadow: 0 0 $accent-dark; */
 }
 
+/* 'box' necessary to limit the width of the layout */
+.box {
+  max-width: $layout-max-width;
+  margin: auto;
+  position: relative;
+}
+/* 'container' necessary to avoid code duplication */
+.container {
+  max-width: nth($container, $bp-count) + px;
+  padding: 0 14px;
+  margin: auto;
+}
 
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 16px;
+// Container Adaptive: 
+$i: $bp-count;
+@while $i > 0 {
+  $width: (nth($screen, $i) - 0.01) + px;
+  @media only screen and (max-width: $width) {
+    .container {
+      max-width: nth($container, $i) + px;
+      padding: 0 nth($padding, $i) + px;
+    }
   }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: $background;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: $accent-dark;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: $accent;
-  }
+  $i: $i - 1;
+}

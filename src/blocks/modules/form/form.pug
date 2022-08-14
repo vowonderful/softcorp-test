@@ -1,0 +1,46 @@
+include ../../components/select/select
+
+- 
+  var list_options = [
+  'Sed urspiciatis 1',
+  'Nemo  ipsam 1',
+  'Et haquidem 1',
+  'Tempos autem 1',
+  'Itaqurum rerum 1',
+  'A very long item name in several lines 1',
+  'Sed urspiciatis 2',
+  'Et haquidem 2',
+  'Nemo  ipsam 2',
+  'A very long item name in several lines 2',
+  'Sed urspiciatis 3',
+  'Et haquidem 3',
+  'Nemo  ipsam 3',
+  'A very long item name in several lines 3'
+  ]
+
+.form__row.form__changeable.form__elements_3
+  .form__col#form-select
+    +select(list_options, 'Выберите тип системы')(class="form__item-select")
+  .form__col#form-email
+    label(for="user_email")
+      input(type="email" name="user_email" id="user_email" placeholder="Ваш e-mail" value="").form__item.form__item-input
+  .form__col#form-name
+    label(for="user_name")
+      input(type="text" name="user_name" id="user_name" placeholder="Ваше имя" value="").form__item.form__item-input
+
+.form__row.form__custom-fields
+  .form__col#form-percent
+    label(for="user_range").input-range.form__item-range
+      .input-range__label
+        .input-range__label_title Sed ut perspiciatis, unde omnis iste natus:
+        .input-range__label_percent 75
+      input(type="range" name="user_range" min="0" max="100" step="1" value="75").form__item.input-range__input
+  .form__col#form-file
+    label(for="user_file").input-file.form__item.form__item-file
+      input(type="file" name="user_file" id="user_file").input-file__input
+      span.input-file__button Прикрепить файл
+        svg
+          use(xlink:href="../img/sprites/sprite.svg#file")
+.form__row.form__submit
+  .form__col
+    button(type="submit" disabled=true).form__submit_btn.btn.btn_full Отправить

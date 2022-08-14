@@ -1,0 +1,735 @@
+.form {
+  $root: &;
+  width: 100%;
+
+  label {
+    position: relative;
+  }
+
+  &__row {
+    display: grid;
+    margin-bottom: 30px;
+
+    &:nth-last-child(2) {
+      margin-bottom: 3.5rem;
+
+      @include is-less-425 {
+        margin-bottom: 2.5rem;
+      }
+      @include is-less-320 {
+        margin-bottom: 1.75rem;
+      }
+    }
+  }
+
+  &__col {
+    width: 100%;
+    min-height: 48px;
+
+    select {
+      padding: 0 12px;
+      cursor: pointer;
+    }
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    text-overflow: ellipsis;
+
+    &-input {
+      height: 48px;
+      padding: 0 16px;
+      font-family: 'Lato', sans-serif;
+      color: $color-secondary;
+      box-sizing: border-box;
+      background-color: rgba($white, .85);
+      border: 1px solid $white;
+      border-radius: 3px;
+      white-space: nowrap;
+      transition: background-color .2s, border .2s, box-shadow .2s;
+      font-size: 17px;
+      font-weight: 600;
+      font-family: 'Raleway';
+      line-height: 34px;
+      padding-top: 2px;
+
+      @include is-less-576 {
+        font-size: 16px;
+        line-height: 28px;
+      }
+
+      @include is-less-425 {
+        height: 44px;
+        font-size: 14px;
+        line-height: 28px;
+      }
+
+      @include is-less-320 {
+        height: 40px;
+      }
+
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        background-color: rgba($white, 1);
+      }
+
+      &.active,
+      &:focus,
+      &:active {
+        box-shadow: 0 0 0 4px $accent;
+      }
+
+      &.active,
+      &:disabled,
+      &::placeholder {
+        color: gray;
+        font-weight: 400;
+      }
+
+    }
+
+    &-range,
+    &-file {
+      width: 100%;
+    }
+
+  }
+
+
+  &__submit {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    
+    #{$root}__col {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    @include is-less-425 {
+      gap: 0;
+    }
+  }
+
+
+  &__custom-fields {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+    column-gap: 30px;
+    align-items: end;
+
+    > :nth-child(1) {
+      grid-column: 1 / 3;
+    }
+
+    @include is-less-1024 {
+      column-gap: 20px;
+    }
+    @include is-less-768 {
+
+    }
+
+    @include is-less-576 {
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 0;
+    }
+   
+  }
+
+
+  &__elements_ {
+    &1 {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+  
+      #{$root}__col {
+        &:nth-of-type(1) {
+          grid-column: 2 / 3;
+        }
+      } 
+  
+      @include is-less-1024 {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+  
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: 2 / 4;
+          }
+        } 
+      }
+   
+      @include is-less-768 {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+  
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: 2 / 4;
+          }
+        } 
+      }
+      @include is-less-576 {
+        column-gap: 15px;
+        row-gap: 16px;
+  
+        grid-template-columns: repeat(1, 1fr);
+        
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: 1 / 1;
+          }
+        } 
+      }
+      @include is-less-425 {
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 13px;
+        row-gap: 9px;
+  
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: 1 / 1;
+          }
+        } 
+      }
+      @include is-less-320 {
+        column-gap: 4px;
+        row-gap: 4px;
+      }
+    } 
+    &2 {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+  
+      @include is-less-1024 {
+        gap: 20px;
+      }
+   
+      @include is-less-768 {
+        grid-template-columns: repeat(2, 1fr);
+  
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: 1 / 2;
+          }
+        } 
+      }
+      @include is-less-576 {
+        column-gap: 15px;
+        row-gap: 16px;
+      }
+      @include is-less-425 {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 13px;
+        row-gap: 9px;
+  
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: 1 / 2;
+          }
+        } 
+      }
+      @include is-less-375 {
+        grid-template-columns: repeat(1, 1fr);
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: 1 / 1;
+          }
+        } 
+        column-gap: 4px;
+        row-gap: 4px;
+      }
+    }
+    &3 {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+  
+      @include is-less-1024 {
+        gap: 20px;
+      }
+   
+      @include is-less-768 {
+        grid-template-columns: repeat(2, 1fr);
+  
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: 1 / 3;
+          }
+        } 
+      }
+      @include is-less-576 {
+        column-gap: 15px;
+        row-gap: 16px;
+      }
+      @include is-less-425 {
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 13px;
+        row-gap: 9px;
+  
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: 1 / 1;
+          }
+        } 
+      }
+      @include is-less-320 {
+        column-gap: 4px;
+        row-gap: 4px;
+      }
+    }
+    &4 {
+      @extend #{$root}__elements_2;
+    }
+    &5 {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px;
+  
+      #{$root}__col {
+        grid-column: span 2;
+  
+        &:nth-of-type(1) {
+          grid-column: 1 / 4;
+        }
+        &:nth-of-type(2) {
+          grid-column: 4 / 7;
+        }
+      }
+  
+      @include is-less-1024 {
+        gap: 20px;
+      }
+   
+      @include is-less-768 {
+        grid-template-columns: repeat(6, 1fr);
+        
+        #{$root}__col {
+          grid-column: span 3;
+  
+          &:nth-of-type(1) {
+            grid-column: 1 / 7;
+          }
+          &:nth-of-type(2) {
+            grid-column: 1 / 4;
+          }
+        }
+      }
+      @include is-less-576 {
+        column-gap: 15px;
+        row-gap: 16px;
+  
+        #{$root}__col {
+          grid-column: span 3;
+  
+          &:nth-of-type(1) {
+            grid-column: 1 / 7;
+          }
+          &:nth-of-type(2) {
+            grid-column: 1 / 4;
+          }
+        }
+      }
+      @include is-less-425 {
+        column-gap: 13px;
+        row-gap: 9px;
+      }
+      @include is-less-375 {
+        grid-template-columns: repeat(1, 1fr);
+        #{$root}__col {
+          grid-column: span 1;
+          &:nth-of-type(n) {
+            grid-column: 1 / 1;
+          }
+        } 
+      }
+      @include is-less-320 {
+        column-gap: 4px;
+        row-gap: 4px;
+      }
+    }
+    &6 {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+  
+      @include is-less-1024 {
+        gap: 20px;
+      }
+   
+      @include is-less-768 {
+        grid-template-columns: repeat(6, 1fr);
+        
+        #{$root}__col {
+          grid-column: span 3;
+        } 
+      }
+      @include is-less-576 {
+        column-gap: 15px;
+        row-gap: 16px;
+      }
+      @include is-less-425 {
+        column-gap: 13px;
+        row-gap: 9px;
+      }
+      @include is-less-375 {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      @include is-less-320 {
+        column-gap: 4px;
+        row-gap: 4px;
+      }
+    }
+    &7 {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px;
+  
+      #{$root}__col {
+        grid-column: span 3;
+  
+        &:nth-of-type(1) {
+          grid-column: span 2;
+        }
+        &:nth-of-type(2) {
+          grid-column: span 2;
+        }
+        &:nth-of-type(3) {
+          grid-column: span 2;
+        }
+      }
+  
+      @include is-less-1024 {
+        gap: 20px;
+      }
+  
+      @include is-less-768 {
+        grid-template-columns: repeat(2, 1fr);
+  
+        #{$root}__col {
+          &:nth-of-type(n) {
+            grid-column: span 1;
+          }
+          &:nth-of-type(1) {
+            grid-column: span 2;
+          }
+        }
+      }
+      @include is-less-576 {
+        column-gap: 15px;
+        row-gap: 16px;
+      }
+      @include is-less-425 {
+        column-gap: 13px;
+        row-gap: 9px;
+      }
+      @include is-less-375 {
+        grid-template-columns: repeat(1, 1fr);
+  
+        #{$root}__col {
+          grid-column: span 1;
+  
+          &:nth-of-type(n) {
+            grid-column: span 1;
+          }
+        }
+      }
+      @include is-less-320 {
+        column-gap: 4px;
+        row-gap: 4px;
+      }
+  
+    }
+    &8 {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px;
+  
+      #{$root}__col {
+        grid-column: span 2;
+  
+        &:nth-of-type(1) {
+          grid-column: 1 / 4;
+        }
+        &:nth-of-type(2) {
+          grid-column: 4 / 7;
+        }
+      }
+  
+      @include is-less-1024 {
+        gap: 20px;
+      }
+   
+      @include is-less-768 {
+        grid-template-columns: repeat(6, 1fr);
+  
+        #{$root}__col {
+          grid-column: span 3;
+  
+          &:nth-of-type(n) {
+            grid-column: span 3;
+          }
+        }
+      }
+      @include is-less-576 {
+        column-gap: 15px;
+        row-gap: 16px;
+  
+        grid-template-columns: repeat(2, 1fr);
+        grid-column: span 2;
+  
+        #{$root}__col {
+          &:nth-of-type(n) {
+            grid-column: 1 span;
+          }
+        }
+      }
+      @include is-less-425 {
+        column-gap: 13px;
+        row-gap: 9px;
+      }
+      @include is-less-375 {
+        grid-template-columns: repeat(1, 1fr);
+        #{$root}__col {
+          grid-column: span 1;
+          &:nth-of-type(n) {
+            grid-column: 1 / 1;
+          }
+        } 
+      }
+      @include is-less-320 {
+        column-gap: 4px;
+        row-gap: 4px;
+      }
+    }
+    &9 {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+  
+      @include is-less-1024 {
+        gap: 20px;
+      }
+   
+      @include is-less-768 {
+        grid-template-columns: repeat(6, 1fr);
+        
+        #{$root}__col {
+          grid-column: span 3;
+  
+          &:nth-of-type(1) {
+            grid-column: 1 / 7;
+          }
+        } 
+      }
+      @include is-less-576 {
+        column-gap: 15px;
+        row-gap: 16px;
+      }
+      @include is-less-425 {
+        column-gap: 13px;
+        row-gap: 9px;
+      }
+      @include is-less-375 {
+        grid-template-columns: repeat(1, 1fr);
+  
+        #{$root}__col {
+          grid-column: span 1;
+  
+          &:nth-of-type(1) {
+            grid-column: span 1;
+          }
+        } 
+      }
+      @include is-less-320 {
+        column-gap: 4px;
+        row-gap: 4px;
+      }
+    }
+    &10 {
+      @extend #{$root}__elements_8;
+  
+      #{$root}__col {
+        grid-column: span 2;
+  
+        &:nth-last-child(2) {
+          grid-column: 1 / 4;
+        }
+        &:nth-last-child(1) {
+          grid-column: 4 / 7;
+        }
+      }
+    }
+    &11 {
+      @extend #{$root}__elements_8;
+  
+      @include is-less-768 {
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: span 6;
+          }
+        }
+      }
+      @include is-less-576 {
+        #{$root}__col {
+          &:nth-of-type(1) {
+            grid-column: 2 span;
+          }
+        }
+      }
+    }
+    &12 {
+      @extend #{$root}__elements_6;
+    }
+  }
+
+}
+
+
+
+.input-file {
+  &__input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  &__button {
+    cursor: pointer;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    flex-direction: row-reverse;
+    font-family: "Lato", sans-serif;
+    color: $accent-third;
+    box-sizing: border-box;
+    background-color: rgba($white, 0.85);
+    border: 1px solid $white;
+    border-radius: 3px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    @include no-select;
+    transition: background-color .2s, transform .15s;
+
+    @include is-less-425 {
+      font-size: 13px;
+      line-height: 17px;
+      height: 44px;
+    }
+
+    @include is-less-320 {
+      font-size: 12px;
+      line-height: 16px;
+      height: 40px;
+    }
+
+    svg {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: rgba($white, 1);
+    }
+
+    &:active,
+    &:focus {
+      transform: scale(.95);
+    }
+
+    @include is-less-425 {
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+}
+
+
+.input-range {
+  &__label {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: $white;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 20px;
+
+    @include is-less-425 {
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 16px;
+    }
+
+    @include is-less-320 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &_percent {
+      white-space: nowrap;
+      margin-left: 2rem;
+
+      @include is-less-425 {
+        margin-left: .8rem;
+      }
+
+      &::after {
+        content: " %";
+      }
+    }
+  }
+
+}
+
+
+%range-track {
+  -webkit-appearance: none;
+  background-color: #bebebe;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  height: 6px;
+  transition: transform .3s, background-color .3s, border .3s;
+  
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $white;
+  }
+}
+
+%range-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  transform: scale(2);
+  background-color: $accent;
+  border: 2px solid $accent-dark;
+  border-radius: 25px;
+  margin-top: -5px;
+  transition: transform .3s, background-color .3s, border .3s, box-shadow .3s;
+  
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $accent-light;
+    transform: scale(2.4);
+    box-shadow: 0 0 0 1px $accent-light;
+    border-color: $accent-dark;
+  }
+}

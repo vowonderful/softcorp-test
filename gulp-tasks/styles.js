@@ -25,10 +25,12 @@ gulp.task("styles", () => {
         .pipe(plumber())
         .pipe(sass())
         .pipe(groupmedia())
-        .pipe(gulpif(production, autoprefixer({
-            cascade: false,
-            grid: true
+        .pipe(gulpif(production, autoprefixer(['last 8 versions'], {
+            cascade: true,
+            grid: true,
+            flex: true,
         })))
+        .pipe(gulp.dest(paths.styles.dist)) // only for no uglify version (in prod)
         .pipe(gulpif(production, mincss({
             compatibility: "ie8", level: {
                 1: {

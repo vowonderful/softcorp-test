@@ -1,0 +1,122 @@
+.btn {
+  white-space: nowrap;
+  /*word-break: break-word;*/
+  overflow-wrap: break-word;
+  vertical-align: middle;
+  @include no-select;
+  -webkit-appearance: none;
+  appearance: none;
+  min-width: 120px;
+  width: 183px;
+  min-height: 43px;
+  max-width: 400px;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 1px;
+  padding: 0 .75rem;
+  box-sizing: border-box;
+  border: 1px solid $btn-border-color;
+  color: $btn-color;
+  text-shadow: 0 0 $btn-color;
+  background-color: $btn-background;
+  border-radius: 4px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: width .3s, min-width .3s, min-height .3s, font-size .3s, background-color .35s, color .35s, border-color .35s, text-shadow .35s, transform .15s;
+
+  @include is-less-1024 {
+    width: 180px;
+    min-height: 43px;
+  } 
+  @include is-less-768 {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  @include is-less-576 {
+    width: 170px;
+    min-height: 43px;
+  }
+  @include is-less-425 {
+
+  }
+  @include is-less-320 {
+    width: 160px;
+    min-width: 100px;
+    min-height: 34px;
+  }
+  @media only screen and (max-width: 260px) {
+    width: auto;
+  }
+
+
+  &:before {
+    content: " ";
+    display: block;
+    width: 200px;
+    height: 80px;
+    background: $btn-color;
+    position: absolute;
+    top: -10px;
+    left: -200px;
+    transform: rotate(-45deg);
+    transition: all .25s ease-in-out;  
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $btn-color;
+    color: $accent;
+    font-weight: 400;
+    
+    &:before{
+      margin-left: 300%;
+    }
+  }
+
+  &:disabled {
+    cursor: no-drop;
+    /*opacity: .9;*/
+    /*filter: grayscale(0.5);*/
+  }
+  
+  &-outline {
+    border: 1px solid $btn-outline-border-color;
+    color: $btn-outline-color;
+    background-color: $btn-outline-background;
+    text-shadow: 0 0 $btn-outline-color;
+
+    &:before {
+      content: " ";
+      background: $accent-light;
+    }
+    
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $accent;
+      border-color: $accent;
+      color: $btn-color;
+      
+      &:before{
+        margin-left: 300%;
+      }
+    }
+  }
+
+  &_full {
+    width: 100%;
+    min-width: 100%;
+  }
+}

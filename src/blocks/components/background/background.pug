@@ -1,0 +1,28 @@
+//- The parent must have "height" specified (not as a percentage!)
+mixin background(src, alt)
+  div.background(class!=attributes.class)
+    picture._container.box
+      //- - var template = src + '-mobile@1x.' + type + ' 425w, ' + src + '-mobile@1.5x.' + type + ' 576w, ' + src + '@0.5x.' + type + ' 768w, ' + src + '@0.75x.' + type + ' 960w,   ' + src + '@1x.' + type + ' 1920w, ' + src + '@1.25x.' + type + ' 2560w, ' + src + '@1.5x.' + type + ' 2880w';
+      
+      - var type = 'webp';  
+      - var srcsetForSource = src + '-mobile@1x.' + type + ' 425w, ' + src + '-mobile@1.5x.' + type + ' 576w, ' + src + '@0.5x.' + type + ' 768w, ' + src + '@0.75x.' + type + ' 960w,   ' + src + '@1x.' + type + ' 1920w, ' + src + '@1.25x.' + type + ' 2560w, ' + src + '@1.5x.' + type + ' 2880w';
+      
+      - var type = 'png';  
+      - var srcsetForImg = src + '-mobile@1x.' + type + ' 425w, ' + src + '-mobile@1.5x.' + type + ' 576w, ' + src + '@0.5x.' + type + ' 768w, ' + src + '@0.75x.' + type + ' 960w,   ' + src + '@1x.' + type + ' 1920w, ' + src + '@1.25x.' + type + ' 2560w, ' + src + '@1.5x.' + type + ' 2880w';
+      
+      - var mediaSizes = '   (max-width: 425px) 425px,         (max-width: 576px) 576px,  (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1440px) 1440px,  (max-width: 1940px) 1920px,                     2560px';
+      
+      source(
+        media=mediaSizes,
+        srcset=srcsetForSource, 
+        type="image/webp", 
+        loading="lazy")
+      img(
+        srcset=srcsetForImg,
+        sizes=mediaSizes,
+        src=src + '.png', 
+        role="presentation", 
+        loading="lazy"
+        alt=srcset, 
+        )
+    

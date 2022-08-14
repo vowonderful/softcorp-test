@@ -1,1 +1,17 @@
-footer#footer.layout-container
+include ../../components/link/link
+
+- var copy = '© 2022 «LOREMIPSUM.NET» Все права защищены.'
+
+footer#footer.footer
+  ._container.container
+    div._copyright #{copy} 
+    span._separator._1
+    div.links._payment
+      +payment('QIWI Wallet', 'Мы принимаем QIWI', 'qiwi')(class="links__icon_qiwi")
+      +payment('Yandex Money', 'Мы принимаем Yandex.Money', 'ym')(class="links__icon_ym")
+      +payment('Web Money', 'Мы принимаем WebMoney', 'wm')(class="links__icon_wm")
+    span._separator._2
+    div.links._contact
+      +contact('info@loremipsum.net', 'Напишите нам на почту', 'mail', 'mailto:info@loremipsum.net')(class="links__icon_mail")
+      +contact('Мы ВКонтакте', 'Наша группа Вконтакте', 'vk', 'https://vk.com/vowonderful')(class="links__icon_vk")
+    span._separator._3

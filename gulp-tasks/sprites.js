@@ -4,10 +4,18 @@ import { paths } from "../gulpfile.babel";
 import gulp from "gulp";
 import svg from "gulp-svg-sprite";
 import debug from "gulp-debug";
+import cheerio from "gulp-cheerio";
 import browsersync from "browser-sync";
 
 gulp.task("sprites", () => {
     return gulp.src(paths.sprites.src)
+        // .pipe(cheerio({
+        //     run: function ($) {
+        //         $('[fill^="#"]').removeAttr('fill');
+        //         $('[stroke^="#"]').removeAttr('stroke');
+        //     },
+        //     parserOptions: {xmlMode: true}
+        // }))
         .pipe(svg({
             shape: {
                 dest: "intermediate-svg"

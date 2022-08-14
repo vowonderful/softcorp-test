@@ -1,0 +1,148 @@
+.footer {
+  display: flex;
+  min-height: 80px;
+  padding: 1.5rem 1rem;
+  background-color: $footer-color;
+  color: $color-base;
+  font-size: 13px;
+  line-height: 15.6px;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+
+  a {
+    color: $color-base;
+    text-decoration: none;
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+    // & > div:not(:first-child)::before {
+    //   content: '';
+    //   height: 18px;
+    //   width: 1px;
+    //   background-color: $gray;
+    // }
+  }
+
+  &__copyright {
+    color: $white;
+    letter-spacing: 0.2px;
+  }
+
+  &__payment,
+  &__contact {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+  }
+
+  &__separator {
+    height: 18px;
+    width: 1px;
+    background-color: $gray;
+
+    &:nth-of-type(3) {
+      display: none;
+    }
+  }
+
+  @include is-less-1280 {
+    min-height: 140px;
+
+    &__copyright {
+      width: 100%;
+      text-align: center;
+      order: 3;
+      margin-top: 3rem;
+      color: $gray;
+    }
+    &__separator {
+      display: none;
+    }
+  }
+  @include is-less-1024 {
+    &__container {
+      /*row-gap: 20px;*/
+      > div {
+        &:nth-of-type(2),
+        &:nth-of-type(3) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    &__copyright {
+      width: 100%;
+      text-align: center;
+      order: 3;
+      margin-top: 1.75rem;
+      color: $gray;
+    }
+    &__separator {
+      display: flex;
+
+      &:nth-of-type(1),
+      &:nth-of-type(3) {
+        display: none;
+      }
+      &:nth-of-type(2) {
+        display: flex;
+        visibility: hidden;
+        margin: 0 1.5rem 1rem 1.5rem;
+      }
+    }
+  }
+  @include is-less-768 {
+    &__container {
+      align-items: flex-start;
+      justify-content: space-around;
+
+      > div {
+        &:nth-of-type(2),
+        &:nth-of-type(3) {
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+    &__separator {
+      display: none;
+      &:nth-of-type(2) {
+        display: none;
+      }
+    }
+  }
+  @include is-less-576 {
+    &__container {
+      align-items: flex-start;
+      justify-content: space-around;
+    }
+    &__payment {
+      order: 2;
+    }
+    &__contact {
+      order: 0;
+    }
+  }
+  @include is-less-425 {
+    &__container {
+      justify-content: flex-start;
+      flex-direction: column;
+
+      > div {
+        &:nth-of-type(2),
+        &:nth-of-type(3) {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

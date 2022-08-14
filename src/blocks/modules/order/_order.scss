@@ -1,0 +1,42 @@
+.order {
+  height: 100%;
+  position: relative;
+
+  &__background {
+    background-color: $accent-third;
+  }
+
+  &__container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+
+  &__wrapper {
+    margin: auto;
+    min-height: 920px;
+    padding: 7.5rem 0;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $desc-color;
+    margin-bottom: 90px;
+    text-align: center;
+  }
+
+  &__dots {
+    margin-bottom: 3rem;
+  }
+}

@@ -1,0 +1,180 @@
+.custom-select {
+  $root: &;
+  &__real {
+    visibility: hidden;
+    display: none;
+  }
+  &__fake {
+    $fake: &;
+    position: relative;
+    z-index: 1;
+
+    &-selected {
+      // -> src/blocks/modules/form/_form.scss
+      @extend .form__item-input;
+      
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 400;
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      padding-right: 13px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      transition: color .125s, border-radius .2s, border-color .125s, background-color .125s;
+
+      &:focus,
+      &:active {
+        box-shadow: 0 0 0 0 transparent;
+      }
+
+      #{$root}.active & {
+        border-radius: 3px 3px 0 0;
+        background-color: $footer-color;
+        border-color: $footer-color;
+        color: $white;
+      }
+    }
+    &-options {
+      height: 0px;
+      background: $accent-third;
+      border-radius: 0 0 3px 3px;
+      border: 1px solid transparent;
+      padding: 0px 5px;
+      overflow: hidden;
+      overflow-y: scroll;
+      position: absolute;
+      top: 48px;
+      width: 100%;
+      z-index: 2;
+      transition: height .3s ease-out, transform .3s ease-out, padding .3s ease-out, border-color .2s;
+
+      @include is-less-425 {
+        top: 44px;
+      }
+      @include is-less-320 {
+        top: 40px;
+      }
+
+      #{$root}.active & {
+        height: 182px;
+        padding: 5px;
+        border-color: $footer-color;
+      }
+
+      &::-webkit-scrollbar {
+        background: $accent-third;
+        width: 12px;
+        border-radius: 5px;
+        border: 4px solid $accent-third;
+      }
+      &::-webkit-scrollbar-track {
+        background: $footer-color;
+        border-radius: 5px;
+        border-left: 4px solid $accent-third;
+        border-right: 4px solid $accent-third;
+        border-top: 0px solid transparent;
+        border-bottom: 0px solid transparent;
+        margin: 5px 0;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $accent;
+        border-left: 4px solid $accent-third;
+        border-right: 4px solid $accent-third;
+        border-radius: 5px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: $accent-light;
+      }
+    }
+    &-option {
+      cursor: pointer;
+      font-family: 'Raleway';
+      color: $color-base;
+      font-size: 17px;
+      line-height: 22px;
+      margin: 1px;
+      padding: 6px 10px;
+      opacity: 0;
+      transform: scale(0);
+      transition: transform .5s, opacity .5s, color .25s;
+
+      @include is-less-425 {
+        font-size: 15px;
+        line-height: 22px;
+      }
+      @include is-less-320 {
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      &:hover {
+        color: $accent-light;
+        transition: transform .5s, opacity .5s, color .25s;
+      }
+
+      #{$root}.active & {
+        opacity: 1;
+        transform: scale(1);
+        transition: transform .25s, opacity .25s, color .25s;
+
+        &:hover {
+          color: $accent-light;
+          transition: transform .5s, opacity .5s, color 0s;
+        }
+      }
+      #{$root}.opened & {
+          transition-delay: 0s !important;
+      }
+    }
+  }
+  &__value {
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 60px);
+    position: absolute;
+    
+    &_disabled {
+      font-weight: 400;
+    }
+  }
+  &__arrow {
+    min-width: 10px;
+    margin-left: 10px;
+    right: 12px;
+    position: absolute;
+    transform: translateY(3px) rotateX(180deg);
+    transition: transform .4s;
+
+    svg {
+      width: 10px;
+      height: 6px;
+
+      use {
+        fill: $accent-third;
+
+        #{$root}.active & {
+          fill: $white;
+        }
+      }
+    }
+
+    @include is-less-425 {
+      transform: translateY(1px) rotateX(180deg);
+      margin-left: 5px;
+    }
+    @include is-less-320 {
+      transform: translateY(2px) rotateX(180deg);
+    }
+
+    #{$root}.active & {
+      transform: translateY(-3px) rotateZ(0deg);
+
+    }
+    
+  }
+}

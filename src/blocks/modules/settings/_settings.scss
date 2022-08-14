@@ -1,0 +1,130 @@
+.settings {
+  $root: &;
+  display: block;
+  position: fixed;
+  top: 80px;
+  right: -5px;
+  width: auto;
+  min-width: 150px;
+  max-width: 230px;
+  margin-left: 50px;
+  transform: translateX(calc(100% + 5px));
+  transition: transform .5s ease-out;
+  z-index: 9;
+
+  label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  input {
+    background: rgba(16, 16, 29, 0.2);
+    border: 1px solid transparent;
+    border-bottom-color: #706f6f;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+
+    &[type="checkbox"] {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__toogle {
+    $toogle: &;
+    width: 50px;
+    position: relative;
+    backdrop-filter: blur(20px);
+    background: rgba(39, 39, 51, 0.54);
+    padding: 1rem;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #32323e;
+    flex-direction: column;
+    color: #fff;
+    box-shadow: 0px 4px 8px 1px rgb(0 0 0 / 40%), -3px 7px 8px 1px rgb(0 0 0 / 42%);
+    top: 59px;
+    right: 45px;
+    z-index: 9;
+    cursor: pointer;
+
+    > span {
+      display: flex;
+      width: 12px;
+      height: 22px;
+      color: #2797e4;
+      font-weight: bold;
+      font-family: "Raleway";
+      font-size: 20px;
+      filter: drop-shadow(0px 0px 6px #2797e4);
+      transition: transform .3s, filter .2s;
+
+      #{$root}.open & {
+        transform: rotate(180deg);
+      }
+
+    }
+
+    &:hover {
+      > span {
+        transform: translateX(-3px);
+        filter: drop-shadow(0px 0px 8px #2797e4);
+      }
+    }
+  }
+  &__wrapper {
+    position: relative;
+    backdrop-filter: blur(20px);
+    background: rgba(39, 39, 51, 0.54);
+    padding: 1.1rem 1.5rem 1.1rem 1.2rem;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #32323e;
+    flex-direction: column;
+    color: #fff;
+    box-shadow: 0px 4px 8px 1px rgb(0 0 0 / 40%), -3px 7px 8px 1px rgb(0 0 0 / 42%);
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    font-family: 'Raleway', monospace;
+    z-index: 11;
+  }
+  &__option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+
+    &_row {
+      flex-direction: row;
+      > label {
+        width: auto;
+      }
+      > input {
+        margin-left: 20px;
+        width: auto;
+      }
+    }
+  }
+
+  &.open {
+    transform: translateX(0);
+
+    #{$root}__toogle {
+      > span {
+  
+        &:hover {
+          transform: translateX(3px) rotate(180deg);
+        }
+  
+      }
+    }
+  }
+}

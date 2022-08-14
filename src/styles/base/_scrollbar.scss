@@ -1,93 +1,20 @@
-// Max width
-@mixin s9 {
-  @media only screen and (max-width: $screen-s9-max) {
-      @content;
-  }
-}
-@mixin s8 {
-  @media only screen and (max-width: $screen-s8-max) {
-      @content;
-  }
-}
-@mixin s7 {
-  @media only screen and (max-width: $screen-s7-max) {
-      @content;
-  }
-}
-@mixin s6 {
-  @media only screen and (max-width: $screen-s6-max) {
-      @content;
-  }
-}
-@mixin s5 {
-  @media only screen and (max-width: $screen-s5-max) {
-      @content;
-  }
-}
-@mixin s4 {
-  @media only screen and (max-width: $screen-s4-max) {
-      @content;
-  }
-}
-@mixin s3 {
-  @media only screen and (max-width: $screen-s3-max) {
-      @content;
-  }
-}
-@mixin s2 {
-  @media only screen and (max-width: $screen-s2-max) {
-      @content;
-  }
-}
-@mixin s1 {
-  @media only screen and (max-width: $screen-s1-max) {
-    @content;
-  }
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: $scroll-width;
 }
 
-// Min width
-@mixin _s9 {
-  @media only screen and (min-width: $screen-s9-min) {
-      @content;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
 }
-@mixin _s8 {
-  @media only screen and (min-width: $screen-s8-min) {
-      @content;
-  }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $accent-dark;
+  border-radius: 15px;
 }
-@mixin _s7 {
-  @media only screen and (min-width: $screen-s7-min) {
-      @content;
-  }
-}
-@mixin _s6 {
-  @media only screen and (min-width: $screen-s6-min) {
-      @content;
-  }
-}
-@mixin _s5 {
-  @media only screen and (min-width: $screen-s5-min) {
-      @content;
-  }
-}
-@mixin _s4 {
-  @media only screen and (min-width: $screen-s4-min) {
-      @content;
-  }
-}
-@mixin _s3 {
-  @media only screen and (min-width: $screen-s3-min) {
-      @content;
-  }
-}
-@mixin _s2 {
-  @media only screen and (min-width: $screen-s2-min) {
-    @content;
-  }
-}
-@mixin _s1 {
-  @media only screen and (min-width: $screen-s1-min) {
-    @content;
-  }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $accent;
 }

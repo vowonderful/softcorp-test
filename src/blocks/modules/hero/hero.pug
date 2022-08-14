@@ -1,8 +1,21 @@
-include ../../components/title/h1
-section#hero.hero.layout-container
-    ._background.background
-        picture
-            source(srcset="img/modules/hero/background.webp", type="image/webp")
-            img(src="img/modules/hero/background.png", alt="hero")
-    ._title
-        +h1('<span class="accent">Lorem ipsum</span> dolor sit ametconsectetur <span class="accent">adipiscing</span>')(class="hero__title")
+include ../../components/text/h1
+include ../../components/background/background
+include ../../components/button/button
+
+section#hero.hero
+	._wrapper
+		+background('img/modules/hero/background', 'hero')._background
+		._container.container
+			._title
+				+h1('<span class="accent">Lorem ipsum</span> dolor sit ametconsectetur <span class="accent">adipiscing</span>')
+			._description
+				p._description_title At vero eos et accusamus et iusto odio dignissimos ducimus!
+				ul._description_list
+					li._description_text &nbsp;Totam rem aperiam eaque ipsa
+					li._description_text &nbsp;Sit voluptatem accusantium doloremque laudantium
+					li._description_text &nbsp;Sed ut perspiciatis, unde omnis iste natus error
+			._buttons 
+				+button('#', 'Заказать')
+				+button('#', 'Подробнее')(class='btn-outline')
+
+

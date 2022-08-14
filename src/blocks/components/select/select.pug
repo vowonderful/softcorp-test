@@ -1,0 +1,20 @@
+//- +select(list_options)(class="header__menu")
+
+mixin select(options, placeholder="-----")
+  .custom-select(class!=attributes.class)
+    select._real
+      option(disabled="disabled" selected="selected" value="")
+      each value, i in options
+        option(value='type_' + (i + 1))
+    ._fake
+      ._fake-selected
+        ._value.-disabled(data-value="")= placeholder
+        ._arrow
+          svg
+            use(xlink:href="../img/sprites/sprite.svg#arrow-angle")
+      ._fake-options
+        each value, i in options
+          - var delay = 'transition-delay: ' + (((i + 1) * 75) + 50) + 'ms';
+          if i > 5
+            - var delay = 'transition-delay: ' + (((5 + 1) * 75) + 50) + 'ms';
+          div(data-value='type_' + (i + 1) style=delay)._fake-option= value

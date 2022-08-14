@@ -1,5 +1,221 @@
+$min-height: 850px;
+$tb-padding: 7.5rem;
+
 .hero {
+  height: 100%;
+  position: relative;
+
   &__background {
-    min-height: 850px;
+    background: linear-gradient(0deg, #272733, #272733 4%, #0f0f1b 100%, transparent);
+
+    img, source {
+      object-position: calc(100%);
+
+      @include is-less-1280 {
+        object-position: calc(100% + 25px);
+      }
+      @include is-less-1024 {
+        object-position: calc(100% + 25px);
+      }
+      @include is-less-768 {
+        object-position: calc(100% + 25px);
+      }
+      @include is-less-576 {
+        object-position: calc(100% + 50px);
+      }
+      @include is-less-425 {
+        object-position: calc(90% + 75px);
+      }
+      @include is-less-320 {
+        object-position: calc(90% + 100px);
+      }
+    }
+
+  }
+
+  &__container {
+    margin: auto;
+    height: 100%;
+    min-height: calc($min-height - ($tb-padding * 2));
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    row-gap: 5rem;
+    column-gap: 5rem;
+    
+
+    @include is-less-1024 {
+      min-height: calc(($min-height - 100px) - ($tb-padding * 2));
+      row-gap: 3.5rem;
+    }
+    @include is-less-768 {
+      min-height: calc(($min-height - 100px) - ($tb-padding * 2));
+      > * {
+        width: 100%;
+      }
+    }
+    @include is-less-576 {
+      min-height: calc(($min-height - 150px) - ($tb-padding * 2));
+      padding: .5rem 1rem;
+    }
+    @include is-less-425 {
+      text-align: center;
+      row-gap: 3rem;
+    }
+    @include is-less-320 {
+      padding: .25rem .5rem;
+      row-gap: 2.5rem;
+    }
+  }
+
+  &__wrapper {
+    margin: auto;
+    min-height: calc($min-height - ($tb-padding * 2));
+    padding: $tb-padding 0;
+
+    @include is-less-1024 {
+      min-height: calc(($min-height - 100px) - ($tb-padding * 2));
+      padding: $tb-padding 0 calc($tb-padding - 3rem) 0;
+    }
+
+    .background {
+      picture {
+        max-width: $layout-max-width;
+        filter: brightness(0.9);
+
+        @include is-less-768 {
+          filter: brightness(0.5) blur(2px);
+        }
+      }
+    }
+  
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 22px;
+    column-gap: 36px;
+    
+    @include is-less-576 {
+      column-gap: 24px;
+    }
+    @include is-less-425 {
+      justify-content: center;
+      column-gap: 20px;
+      row-gap: 18px;
+    }
+    @include is-less-320 {
+      justify-content: center;
+      column-gap: 16px;
+      row-gap: 12px;
+    }
+
+  }
+  &__title {
+    max-width: 900px;
+    margin-bottom: 1rem;
+
+    @include is-less-425 {
+      padding: .5rem 1rem;
+    }
+    @include is-less-320 {
+      padding: .25rem .5rem;
+    }
+  }
+  &__description {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    & > * {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 400;
+      margin: 3px 0;
+    }
+
+    &_list {
+      margin-left: 5px;
+
+      list-style-type: none;
+      & > li {
+        margin: 5px 0;
+
+        &:before {
+          content: "- ";
+        }
+      }
+    }
+
+    @include is-less-1024 {
+      & > * {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+    @include is-less-768 {
+      & > * {
+        font-size: 16px;
+        line-height: 20px;
+
+        color: $white;
+      }
+    }
+    @include is-less-576 {
+      & > * {
+        font-size: 16px;
+        line-height: 22px;
+      }
+      &_list {
+        & > li {
+          margin: 3px 0;
+          width: 100%;
+        }
+      }
+    }
+    @include is-less-425 {
+      padding: 0 .75rem;
+      & > * {
+        font-size: 14px;
+        line-height: 19px;
+      }
+
+      &_list {
+        margin-left: 0;
+
+        & > li {
+          &:before {
+            content: "";
+          }
+        }
+      }
+    }
+    @include is-less-320 {
+      padding: 0 .15rem;
+
+      & > * {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    &_title,
+    &_text {
+      // font-family: 'Raleway';
+      // letter-spacing: -0.5px;
+    }
+    &_title {
+      font-weight: 700;
+    }
+    &_text {
+      font-weight: 400;
+    }
   }
 }

@@ -1,4 +1,21 @@
-section#order.layout-container
-    picture
-        source(srcset="img/modules/order/map.webp", type="image/webp")
-        img(src="img/modules/order/map.png", alt="map")
+include ../../components/text/h2
+include ../../components/text/desc
+include ../../components/background/background
+include ../../components/dots/dots
+
+
+section#order.order
+  ._wrapper
+    +background('img/modules/order/map', 'map')._background
+    ._container.container
+      ._title
+        +h2('Оформление <span class="accent">заказа</span>')
+      +desc('Перед заполнением формы ознакомьтесь с нашей схемой работы!')(class="order__description")
+      .dots._dots
+        +dot("magnifier", "1. Lorem ipsum dolorsit")
+        +dot("percentage", "2. Consectetu radipiscing elit")
+        +dot("document", "3. Sed do eiusmod tempor")
+        +dot("envelope", "4. Esse cillum doloreeu fugiat")
+        +dot("bill", "5. Excepteur sint occaecat cupidatat non proident")
+      form(action="get").form._form#order-form
+        include ../form/form

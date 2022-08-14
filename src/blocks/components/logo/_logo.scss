@@ -1,12 +1,58 @@
 .logo {
+  $root: &;
+  transition: transform .2s;
+
   &__title {
     color: $white;
     font-weight: 800;
     font-size: 1.75rem;
     line-height: 2rem;
+    white-space: nowrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-family: 'Raleway';
+    transition: transform .2s, filter .2s;
 
     &_accent {
       color: $accent-light;
     }
+
+    @include is-less-768 {
+      font-size: calc(1rem + 1.1vw);
+    }
+
+    @include is-less-320 {
+      font-size: 1rem;
+      padding-left: .5rem;
+    }
   }
+
+  // &:hover {
+  //   transform: scale(1.06);
+  // }
+
+  a {
+    filter: inherit;
+    transition: transform .2s;
+    
+    &:active .logo__title,
+    &:focus .logo__title {
+      filter: drop-shadow(0 0 10px $accent);
+    }
+
+    &:hover:active .logo__title,
+    &:hover:focus .logo__title {
+      filter: none;
+    }
+  }
+
+  @include is-less-1024 {
+    &:hover {
+      transform: scale(1);
+    }
+    &:active {
+      transform: scale(.9);
+    }
+  }
+
 }

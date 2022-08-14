@@ -1,93 +1,205 @@
+/* BreakPoint Variables AutoCreating: */
+$count: 0;
+$count: $count + 1;
+$screen-over-320: nth($screen, $count) + px;
+$screen-less-320: (nth($screen, $count) - 0.01) + px;
+$count: $count + 1;
+$screen-over-375: nth($screen, $count) + px;
+$screen-less-375: (nth($screen, $count) - 0.01) + px;
+$count: $count + 1;
+$screen-over-425: nth($screen, $count) + px;
+$screen-less-425: (nth($screen, $count) - 0.01) + px;
+$count: $count + 1;
+$screen-over-576: nth($screen, $count) + px;
+$screen-less-576: (nth($screen, $count) - 0.01) + px;
+$count: $count + 1;
+$screen-over-768: nth($screen, $count) + px;
+$screen-less-768: (nth($screen, $count) - 0.01) + px;
+$count: $count + 1;
+$screen-over-1024: nth($screen, $count) + px;
+$screen-less-1024: (nth($screen, $count) - 0.01) + px;
+$count: $count + 1;
+$screen-over-1280: nth($screen, $count) + px;
+$screen-less-1280: (nth($screen, $count) - 0.01) + px;
+$count: $count + 1;
+$screen-over-1920: nth($screen, $count) + px;
+$screen-less-1920: (nth($screen, $count) - 0.01) + px;
+
+
+
 // Max width
-@mixin s9 {
-  @media only screen and (max-width: $screen-s9-max) {
+@mixin is-less-1920 {
+  @media only screen and (max-width: $screen-less-1920) {
       @content;
   }
 }
-@mixin s8 {
-  @media only screen and (max-width: $screen-s8-max) {
+@mixin is-less-1280 {
+  @media only screen and (max-width: $screen-less-1280) {
       @content;
   }
 }
-@mixin s7 {
-  @media only screen and (max-width: $screen-s7-max) {
+@mixin is-less-1024 {
+  @media only screen and (max-width: $screen-less-1024) {
       @content;
   }
 }
-@mixin s6 {
-  @media only screen and (max-width: $screen-s6-max) {
+@mixin is-less-768 {
+  @media only screen and (max-width: $screen-less-768) {
       @content;
   }
 }
-@mixin s5 {
-  @media only screen and (max-width: $screen-s5-max) {
+@mixin is-less-576 {
+  @media only screen and (max-width: $screen-less-576) {
       @content;
   }
 }
-@mixin s4 {
-  @media only screen and (max-width: $screen-s4-max) {
-      @content;
-  }
-}
-@mixin s3 {
-  @media only screen and (max-width: $screen-s3-max) {
-      @content;
-  }
-}
-@mixin s2 {
-  @media only screen and (max-width: $screen-s2-max) {
-      @content;
-  }
-}
-@mixin s1 {
-  @media only screen and (max-width: $screen-s1-max) {
+@mixin is-less-425 {
+  @media only screen and (max-width: $screen-less-425) {
     @content;
+  }
+}
+@mixin is-less-375 {
+  @media only screen and (max-width: $screen-less-375) {
+      @content;
+  }
+}
+@mixin is-less-320 {
+  @media only screen and (max-width: $screen-less-320) {
+      @content;
   }
 }
 
 // Min width
-@mixin _s9 {
-  @media only screen and (min-width: $screen-s9-min) {
+@mixin is-over-1920 {
+  @media only screen and (min-width: $screen-over-1920) {
       @content;
   }
 }
-@mixin _s8 {
-  @media only screen and (min-width: $screen-s8-min) {
+@mixin is-over-1280 {
+  @media only screen and (min-width: $screen-over-1280) {
       @content;
   }
 }
-@mixin _s7 {
-  @media only screen and (min-width: $screen-s7-min) {
+@mixin is-over-1024 {
+  @media only screen and (min-width: $screen-over-1024) {
       @content;
   }
 }
-@mixin _s6 {
-  @media only screen and (min-width: $screen-s6-min) {
+@mixin is-over-768 {
+  @media only screen and (min-width: $screen-over-768) {
       @content;
   }
 }
-@mixin _s5 {
-  @media only screen and (min-width: $screen-s5-min) {
-      @content;
-  }
-}
-@mixin _s4 {
-  @media only screen and (min-width: $screen-s4-min) {
-      @content;
-  }
-}
-@mixin _s3 {
-  @media only screen and (min-width: $screen-s3-min) {
-      @content;
-  }
-}
-@mixin _s2 {
-  @media only screen and (min-width: $screen-s2-min) {
+@mixin is-over-576 {
+  @media only screen and (min-width: $screen-over-576) {
     @content;
   }
 }
-@mixin _s1 {
-  @media only screen and (min-width: $screen-s1-min) {
+@mixin is-over-425 {
+  @media only screen and (min-width: $screen-over-425) {
+    @content;
+  }
+}
+@mixin is-over-375 {
+  @media only screen and (min-width: $screen-over-375) {
+    @content;
+  }
+}
+@mixin is-over-320 {
+  @media only screen and (min-width: $screen-over-320) {
+    @content;
+  }
+}
+
+
+// Max height
+@mixin is-height-less-1920 {
+  @media only screen and (max-height: $screen-less-1920) {
+      @content;
+  }
+}
+@mixin is-height-less-1280 {
+  @media only screen and (max-height: $screen-less-1280) {
+      @content;
+  }
+}
+@mixin is-height-less-1024 {
+  @media only screen and (max-height: $screen-less-1024) {
+      @content;
+  }
+}
+@mixin is-height-less-768 {
+  @media only screen and (max-height: $screen-less-768) {
+      @content;
+  }
+}
+@mixin is-height-less-576 {
+  @media only screen and (max-height: $screen-less-576) {
+      @content;
+  }
+}
+@mixin is-height-less-425 {
+  @media only screen and (max-height: $screen-less-425) {
+      @content;
+  }
+}
+@mixin is-height-less-375 {
+  @media only screen and (max-height: $screen-less-375) {
+      @content;
+  }
+}
+@mixin is-height-less-320 {
+  @media only screen and (max-height: $screen-less-320) {
+      @content;
+  }
+}
+
+// Min height
+@mixin is-height-over-1920 {
+  @media only screen and (min-height: $screen-over-1920) {
+      @content;
+  }
+}
+@mixin is-height-over-1280 {
+  @media only screen and (min-height: $screen-over-1280) {
+      @content;
+  }
+}
+@mixin is-height-over-1024 {
+  @media only screen and (min-height: $screen-over-1024) {
+      @content;
+  }
+}
+@mixin is-height-over-768 {
+  @media only screen and (min-height: $screen-over-768) {
+      @content;
+  }
+}
+@mixin is-height-over-576 {
+  @media only screen and (min-height: $screen-over-576) {
+    @content;
+  }
+}
+@mixin is-height-over-425 {
+  @media only screen and (min-height: $screen-over-425) {
+    @content;
+  }
+}
+@mixin is-height-over-375 {
+  @media only screen and (min-height: $screen-over-375) {
+    @content;
+  }
+}
+@mixin is-height-over-320 {
+  @media only screen and (min-height: $screen-over-320) {
+    @content;
+  }
+}
+
+// Custom:
+
+@mixin is-height-less-360 {
+  @media only screen and (max-height: 360px) {
     @content;
   }
 }

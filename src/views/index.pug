@@ -6,10 +6,15 @@ block variables
 
 block content
 	include ../blocks/modules/header/header
-	include ../blocks/modules/hero/hero
-	include ../blocks/modules/order/order
+	main.main
+		include ../blocks/modules/hero/hero
+		include ../blocks/modules/order/order
 	include ../blocks/modules/footer/footer
-
+	
+	include ../blocks/modules/settings/settings
+	
 block scripts
-	script(src="js/vendor.js" defer="defer")
+	//- script(src="js/vendor.js" defer="defer")
 	script(src="js/main.js" defer="defer")
+
+	// 2022 © Developed by Vladimir Mihalevich [mihalevich.dev]
