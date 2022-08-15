@@ -750,6 +750,12 @@ textarea {
   margin: auto;
 }
 
+/* Fix for GitHub Pages */
+
+body #menu {
+  position: relative !important;
+}
+
 /* Scrollbar */
 
 ::-webkit-scrollbar {
