@@ -99,11 +99,6 @@ textarea {
   margin: auto;
 }
 
-/* Fix for GitHub Pages */
-body #menu{
-  position: relative !important;
-}
-
 // Container Adaptive: 
 $i: $bp-count;
 @while $i > 0 {
