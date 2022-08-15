@@ -48,7 +48,7 @@
     * __Yarn__: ```npm i -g yarn```
     * __Gulp__: ```npm i -g gulp```
     * __Bem Tools__: ```npm i -g bem-tools-core```
-* скачайте сборку с помощью __Git__: ```git clone https://github.com/vowonderful/softcorp-test.git```
+* скачайте сборку с помощью __Git__: ```git clone https://github.com/vowonderful/softcorp-test.git .```
 * перейдите в скачанную папку со сборкой: ```cd softcorp-test```
 * введите ```yarn set version berry```
 * скачайте необходимые зависимости: ```yarn```
