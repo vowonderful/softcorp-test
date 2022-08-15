@@ -1,9 +1,12 @@
 # 👍 _Реализация тестового задания для SoftCorp_
-Демонстрация: [softcorp.nextwell.top](https://softcorp.nextwell.top)
+Демонстрация: [vowonderful.github.io/softcorp-test/dist/](https://vowonderful.github.io/softcorp-test/dist/) | [softcorp.nextwell.top](https://softcorp.nextwell.top)
 
 
 ## Исходный макет для выполнения задания
-![Исходный макет тестового задания](https://github.com/vowonderful/softcorp-test/raw/master/layout.png)
+<details>
+<summary>[показать макет]</summary>
+<img src="https://github.com/vowonderful/softcorp-test/raw/master/layout.png" alt="Исходный макет тестового задания" />
+</details>  
 
 
 ## 🗒️ Требование к заданию
@@ -21,6 +24,16 @@
 12. Допускается использование сторонних плагинов для стилизации элементов, если это необходимо.
 13. Выполненное тестовое задание должно быть загружено на github со страницей на github pages.
 
+
+## 🚀 Результаты PageSpeed Insights
+<details>
+<summary>[результат для десктопов]</summary>
+<img src="https://github.com/vowonderful/softcorp-test/raw/master/pagespeed-desktop.png" alt="Результат PageSpeed Insights для мобильных десктопов" />
+</details>  
+<details>
+<summary>[результат для мобильных устройств]</summary>
+<img src="https://github.com/vowonderful/softcorp-test/raw/master/pagespeed-mobile.png" alt="Результат PageSpeed Insights для мобильных устройств" />
+</details>  
 
 ## 🔥 Особенности проекта
 * именование классов реализовано по методологии __БЭМ__
