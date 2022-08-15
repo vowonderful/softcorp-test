@@ -1,5 +1,5 @@
 # 👍 _Реализация тестового задания для SoftCorp_
-Демонстрация: [softcorp.nextwell.top](https://softcorp.nextwell.top)
+Демонстрация: [vowonderful.github.io/softcorp-test/dist/](https://vowonderful.github.io/softcorp-test/dist/) | [softcorp.nextwell.top](https://softcorp.nextwell.top)
 
 
 ## Исходный макет для выполнения задания
