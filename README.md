@@ -5,7 +5,7 @@
 ## Исходный макет для выполнения задания
 <details>
 <summary>[показать макет]</summary>
-![Исходный макет тестового задания](https://github.com/vowonderful/softcorp-test/raw/master/layout.png)
+<img src="https://github.com/vowonderful/softcorp-test/raw/master/layout.png" alt="Исходный макет тестового задания" />
 </details>  
 
 
@@ -27,12 +27,12 @@
 
 ## 🚀 Результаты PageSpeed Insights
 <details>
-<summary>[результат для мобильных устройств]</summary>
-![Результат PageSpeed Insights для мобильных устройств](https://github.com/vowonderful/softcorp-test/raw/master/pagespeed-mobile.png)
+<summary>[результат для десктопов]</summary>
+<img src="https://github.com/vowonderful/softcorp-test/raw/master/pagespeed-desktop.png" alt="Результат PageSpeed Insights для мобильных десктопов" />
 </details>  
 <details>
-<summary>[результат для десктопов]</summary>
-![Результат PageSpeed Insights для мобильных десктопов](https://github.com/vowonderful/softcorp-test/raw/master/pagespeed-desktop.png)
+<summary>[результат для мобильных устройств]</summary>
+<img src="https://github.com/vowonderful/softcorp-test/raw/master/pagespeed-mobile.png" alt="Результат PageSpeed Insights для мобильных устройств" />
 </details>  
 
 ## 🔥 Особенности проекта
