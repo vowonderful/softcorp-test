@@ -2,7 +2,7 @@ mixin dot(icon_name, description)
   .dots__item(class!='dots__icon_' + icon_name)
     .dots__icon
       svg
-        use(xlink:href="../img/sprites/sprite.svg#" + icon_name)
+        use(xlink:href="img/sprites/sprite.svg#" + icon_name)
     .dots__description= description
     if block
       block

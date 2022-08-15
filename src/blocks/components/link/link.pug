@@ -2,7 +2,7 @@ mixin payment(title='', hint='', icon)
   .links__item.links__payment
     .links__icon(class!=attributes.class title=hint)
       svg
-        use(xlink:href="../img/sprites/sprite.svg#icon-" + icon)
+        use(xlink:href="img/sprites/sprite.svg#icon-" + icon)
     .links__title= title
 
 mixin contact(title='', hint='', icon, link)
@@ -10,5 +10,5 @@ mixin contact(title='', hint='', icon, link)
     a(href=link target="_blank")
       .links__icon(class!=attributes.class title=hint)
         svg
-          use(xlink:href="../img/sprites/sprite.svg#icon-" + icon)
+          use(xlink:href="img/sprites/sprite.svg#icon-" + icon)
       .links__title= title

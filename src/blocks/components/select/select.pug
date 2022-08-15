@@ -11,7 +11,7 @@ mixin select(options, placeholder="-----")
         ._value.-disabled(data-value="")= placeholder
         ._arrow
           svg
-            use(xlink:href="../img/sprites/sprite.svg#arrow-angle")
+            use(xlink:href="img/sprites/sprite.svg#arrow-angle")
       ._fake-options
         each value, i in options
           - var delay = 'transition-delay: ' + (((i + 1) * 75) + 50) + 'ms';
