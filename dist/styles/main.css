@@ -4296,3 +4296,9 @@ textarea {
     width: auto;
   }
 }
+
+/* Fix for GitHub Pages */
+body #menu {
+    position: relative !important;
+}
+
